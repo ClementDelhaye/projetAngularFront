@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "iut-app": {
+    "angular-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/iut-app",
+            "outputPath": "dist/angular-front",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "iut-app:build:production"
+              "browserTarget": "angular-front:build:production"
             },
             "development": {
-              "browserTarget": "iut-app:build:development"
+              "browserTarget": "angular-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "iut-app:build"
+            "browserTarget": "angular-front:build"
           }
         },
         "test": {
@@ -111,7 +111,7 @@
           "options": {
             "prerender": false,
             "ssr": false,
-            "browserTarget": "iut-app:build:production",
+            "browserTarget": "angular-front:build:production",
             "firebaseProject": "lp-dim-app-cd",
             "firebaseHostingSite": "lp-dim-app-cd"
           }

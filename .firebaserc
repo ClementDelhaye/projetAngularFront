@@ -2,7 +2,7 @@
   "targets": {
     "lp-dim-app-cd": {
       "hosting": {
-        "iut-app": [
+        "angular-front": [
           "lp-dim-app-cd"
         ]
       }

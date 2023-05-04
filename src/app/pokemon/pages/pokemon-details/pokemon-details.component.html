@@ -1,0 +1,4 @@
+<button mat-raised-button (click)='goBack()'><mat-icon>arrow_back</mat-icon></button>
+{{pokemon | async | json}}
+
+<app-pokemon-card [selectedPokemon]="pokemon |async" (received)="showReceivedValue($event)"></app-pokemon-card>

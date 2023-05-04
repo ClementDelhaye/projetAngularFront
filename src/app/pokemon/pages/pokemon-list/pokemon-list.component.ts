@@ -3,21 +3,21 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { GenericPopupComponent } from 'src/app/shared/components/generic-popup/generic-popup.component';
-import { StudentFormComponent } from '../../components/student-form/student-form.component';
-import { Student } from '../../models/student';
-import { StudentService } from '../../services/student.service';
+import { PokemonFormComponent } from '../../components/pokemon-form/pokemon-form.component';
+import { Pokemon } from '../../models/pokemon';
+import { PokemonService } from '../../services/pokemon.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-student-list',
-  templateUrl: './student-list.component.html',
-  styleUrls: ['./student-list.component.sass']
+  selector: 'app-pokemon-list',
+  templateUrl: './pokemon-list.component.html',
+  styleUrls: ['./pokemon-list.component.sass']
 })
-export class StudentListComponent implements OnInit, OnDestroy{
-  students: Observable<Student[]>;
+export class PokemonListComponent implements OnInit, OnDestroy{
+  pokemons: Observable<Pokemon[]>;
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private studentService: StudentService, private dialog: MatDialog, private _snackBar: MatSnackBar , private router: Router){
+  constructor(private pokemonService: PokemonService, private dialog: MatDialog, private _snackBar: MatSnackBar , private router: Router){
     
   }
   
@@ -30,18 +30,18 @@ export class StudentListComponent implements OnInit, OnDestroy{
   }
 
   fetchData() {
-    this.students = this.studentService.get();
+    this.pokemons = this.pokemonService.get();
   }
 
  displayedColumns: string[] = ['firstName', 'lastName', 'class', 'email', 'update', 'delete'];
 
- openStudentForm(student?: Student) {
-    const dialogRef = this.dialog.open(StudentFormComponent, {
+ openPokemonForm(pokemon?: Pokemon) {
+    const dialogRef = this.dialog.open(PokemonFormComponent, {
       height: '85%',
       width: '60%',
       data: {
-        isCreateForm: student ? false : true,
-        student: student ? student : undefined
+        isCreateForm: pokemon ? false : true,
+        pokemon: pokemon ? pokemon : undefined
       }
     });
 
@@ -73,7 +73,7 @@ export class StudentListComponent implements OnInit, OnDestroy{
     .pipe(takeUntil(this.destroy$))
     .subscribe(result => {
       if (result) {
-        this.studentService.delete(id)
+        this.pokemonService.delete(id)
           .pipe(takeUntil(this.destroy$))
           .subscribe(result => {
             this._snackBar.open(result, '', {
@@ -86,7 +86,7 @@ export class StudentListComponent implements OnInit, OnDestroy{
     });
  }
 
- showStudentDetails(studentId:number){
-  this.router.navigate(['/students/'+ studentId]);
+ showPokemonDetails(pokemonId:number){
+  this.router.navigate(['/pokemons/'+ pokemonId]);
  }
 }

@@ -1,7 +1,7 @@
 {
   "hosting": {
-    "target": "iut-app",
-    "public": "dist/iut-app",
+    "target": "angular-front",
+    "public": "dist/angular-front",
     "ignore": [
       "**/.*"
     ],
