@@ -112,8 +112,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "angular-front:build:production",
-            "firebaseProject": "lp-dim-app-cd",
-            "firebaseHostingSite": "lp-dim-app-cd"
+            "firebaseProject": "projet-angular-bb18c",
+            "firebaseHostingSite": "projet-angular-bb18c"
           }
         }
       }

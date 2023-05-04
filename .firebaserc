@@ -1,14 +1,14 @@
 {
   "targets": {
-    "lp-dim-app-cd": {
+    "projet-angular-bb18c": {
       "hosting": {
         "angular-front": [
-          "lp-dim-app-cd"
+          "projet-angular-bb18c"
         ]
       }
     }
   },
   "projects": {
-    "default": "lp-dim-app-cd"
+    "default": "projet-angular-bb18c"
   }
 }
