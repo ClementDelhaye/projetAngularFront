@@ -8,34 +8,28 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Prénom</mat-label>
-      <input matInput formControlName="firstName" />
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
       <mat-label>Nom</mat-label>
-      <input matInput formControlName="lastName" />
+      <input matInput formControlName="name" />
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Classe</mat-label>
-      <mat-select formControlName="class">
-        <mat-option *ngFor="let class of classes" [value]="class">
-          {{class}}
-        </mat-option>
-      </mat-select>
+      <mat-label>Type</mat-label>
+      <input matInput formControlName="type" />
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput formControlName="email" />
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description" />
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Date de naissance</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+    <mat-form-field appearance="outline">
+      <mat-label>Poids</mat-label>
+      <input matInput formControlName="poids" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Taille</mat-label>
+      <input matInput formControlName="taille" />
     </mat-form-field>
   </div>
 
