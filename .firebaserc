@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lp-dim-app-cd": {
+      "hosting": {
+        "iut-app": [
+          "lp-dim-app-cd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lp-dim-app-cd"
+  }
+}
